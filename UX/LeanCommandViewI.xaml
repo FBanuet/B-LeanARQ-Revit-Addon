@@ -1,0 +1,73 @@
+﻿<Window 
+    x:Name="win"
+    x:Class="BLEANarq.UX.LeanCommandViewI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BLEANarq.UX"
+             mc:Ignorable="d" 
+             SizeToContent="Height" Width="750" Title="DATArchitects.NET B-Lean Apps" WindowStartupLocation="CenterScreen" BorderThickness="0,8,0,0"
+        BorderBrush= "Black"  FontStyle="Normal">
+    
+    
+    
+    <Window.Resources>
+        <Style x:Key="DefaultRowStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="IsSelected" Value="{Binding IsSelected}"/>
+        </Style>
+    </Window.Resources>
+    
+    
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        
+        
+        <DataGrid ItemsSource="{Binding SpatialObjects, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  RowStyle="{StaticResource DefaultRowStyle}"
+                  AutoGenerateColumns="False"
+                  VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Hidden"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  IsReadOnly="False"
+                  SelectionMode="Extended"
+                  SelectionUnit="FullRow"
+                  MaxHeight="500"
+                  Margin="10">
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Room Name" Binding="{Binding Name, Mode=OneWay}"
+                                    Width="*"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Room Area" Binding="{Binding Area, Mode=OneWay}"
+                                    Width="250"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Room Number" Binding="{Binding Number, Mode=OneWay}"
+                                    Width="250"
+                                    IsReadOnly="True"/>
+                <DataGridTextColumn Header="Room Level" Binding="{Binding Level, Mode=OneWay}"
+                                    Width="*"
+                                    IsReadOnly="True"/>
+
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+
+        <Button Grid.Row="1" Width="80" Height="25" HorizontalAlignment="Right" Margin="0,0,15,0"
+                Content="CloseApp"
+                Command="{Binding Close, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=win}"/>
+        <Button Grid.Row="1" Width="80" Height="25" HorizontalAlignment="Right" Margin="0,0,120,0"
+                Content="DeleteRooms"
+                Command="{Binding Delete, Mode=OneWay}"
+                CommandParameter="{Binding ElementName=win}"/>
+
+    </Grid>
+</Window>

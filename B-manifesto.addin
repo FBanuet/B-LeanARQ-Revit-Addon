@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<RevitAddIns>
+
+	<AddIn Type="Application">
+		<Name>DATools.Net.App</Name>
+		<Assembly>BLEANarq.dll</Assembly>
+		<AddInId>6483542c-9634-4cca-b787-e463881f1d07</AddInId>
+		<FullClassName>BLEANarq.AppMainUI</FullClassName>
+		<VendorId>DatArchitects</VendorId>
+		<VendorDescription>DatArchitects DAT.net</VendorDescription>
+	</AddIn>
+
+</RevitAddIns>

@@ -1,0 +1,35 @@
+﻿<Page x:Class="BLEANarq.UX.DockablePanelPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BLEANarq.UX"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" 
+             d:DesignWidth="500"
+             Background="White">
+             
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Content="Living Room Designer"
+               VerticalAlignment="Center"
+               FontWeight="DemiBold"
+               Margin="10,0,0,0"
+               Padding="0"
+               FontSize="15"></Label>
+        
+        <Button Grid.Row="0" 
+                Content="Reload"
+                Width="75" 
+                Height="20"
+                HorizontalAlignment="Right"
+                Margin="0,0,10,0" 
+                Command="{Binding LoadRequirements}"/>
+
+
+    </Grid>
+</Page>
